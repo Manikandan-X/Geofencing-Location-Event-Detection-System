@@ -27,8 +27,24 @@ services:
     volumes:
       - .:/app
 
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
 
+    container_name: geofence_frontend
 
+    restart: unless-stopped
+
+    ports:
+      - "5174:5173"
+
+    depends_on:
+      - backend
+
+    volumes:
+      - ../frontend:/app
+      - /app/node_modules
 
 
   mysql:

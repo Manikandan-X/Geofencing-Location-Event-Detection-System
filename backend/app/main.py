@@ -107,11 +107,11 @@ app.add_exception_handler(
 
 app.include_router(auth_router)
 app.include_router(user_router)
-app.include_router(audit_log_router)
 app.include_router(device_router)
 app.include_router(geofence_router)
 app.include_router(location_event_router)
 app.include_router(geofence_event_router)
+app.include_router(audit_log_router)
 
 
 # --------------------------------------------------
